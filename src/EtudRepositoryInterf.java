@@ -1,6 +1,6 @@
 import java.sql.SQLException;
 
-public interface IEtdRep{
+public interface EtudRepositoryInterf{
 
 	boolean Exists(int matricule) throws SQLException;
 
