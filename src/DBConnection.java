@@ -2,25 +2,33 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/* to implement the singleton pattern we changed the access to the constructor from public to 
+ * private in addition to adding an instance "instance" and the method getInstance()*/
+
 public class DBConnection {
 	   
-		String BDD = "nomBD";  /*voici un commentaire*/
+		String BDD = "nomBD";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
 		String user = "root";
 		String passwd = "";
-	    private Connection conn;
-
+	    private static Connection conn;
+	    private static DBConnection INST;
 	   
 	    public DBConnection() throws SQLException {
 			conn=DriverManager.getConnection(url, user,passwd);
 		}
-
 	    
 	    public Connection getConn() {
 			return conn;
 		}
+	    
+	    public static DBConnection getInstance() throws SQLException {
+	    	if (INST == null)
+	    	{ 
+	    		INST = new DBConnection ();
+	    		conn = INST.getConn();
+	    	}
+			return INST;
+		}
 
-
-		
-	
 }
