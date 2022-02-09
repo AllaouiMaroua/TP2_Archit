@@ -5,7 +5,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class EtudiantService implements IEtdSrv{
-	
+	// Aprés avoir faire l'analyse ma solution proposée est de garder les responsabilités dans 
+         la méthode « inscription » car ils sont reliés entre eux temporellement.
 	public boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
 	{
 		EtudRepositoryInterf StudRep= new EtudiantRepository();
