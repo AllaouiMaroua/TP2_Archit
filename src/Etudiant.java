@@ -1,5 +1,6 @@
 
-public class Etudiant {
+
+public abstract class Etudiant{ 
 
 		private int matricule;
 	    private String nom;
@@ -100,7 +101,7 @@ public class Etudiant {
 		public void setPwd(String pwd) {
 			this.pwd = pwd;
 		}
-
+		
 		public abstract void nbr_book_authorized ();
 		
-	    }
+}

@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EtudiantRepository implements EtudRepositoryInterf{
+public abstract class EtudiantRepository implements EtudRepositoryInterf{
 	
 	
 	public void add(Etudiant E) throws SQLException
@@ -24,7 +24,7 @@ public class EtudiantRepository implements EtudRepositoryInterf{
 	 }
 
 
-	public boolean Exists(String email) throws SQLException	
+	public boolean Exists(String email) throws SQLException
 	{
 		Connection connect = DBConnection.getInstance().getConn();
 		
